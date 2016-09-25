@@ -16,7 +16,14 @@ module.exports = {
 
         app.get('/widget/renderHTML', function (request, response) {
             var adverts = ESPDB.getAdverts(request.query.campaignId);
-            response.render('home', adverts);
+            response.render('widget', {
+                layout: false,
+                data: {adverts: adverts},
+                helpers: {
+                    inc: function (val) {
+                    return parseInt(val) + 1;
+                }
+            }});
         });
     }
 };

@@ -9,7 +9,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 var exphbs = require('express-handlebars');
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.listen(app.get('port'), function () {
@@ -18,4 +18,5 @@ app.listen(app.get('port'), function () {
 
 //Bootstrap
 ESPDB.connect();
+ESPDB.spoofData();
 ESPRoutes.setRoutes(app);

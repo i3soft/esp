@@ -1,0 +1,13 @@
+{{#each data.adverts}}
+<div
+        onclick="EspWidget.clickAd('{{this._id}}', {'incrementClick': 1})"
+        id="content-{{inc @index}}"
+        style="
+            display:none;
+            width: 100%;
+            height: 80px;
+            background: url('');
+            background-repeat: no-repeat;
+            background-size: contain;">
+</div>
+{{/each}}

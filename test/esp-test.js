@@ -9,6 +9,7 @@ describe('DB tests', function () {
     });
 
     describe('#ESPDB', function () {
+        
         it('Should return at least 1 campaign', function () {
             ESPDB.createCampaign();
             var allCampaigns = ESPDB.findAllCampaigns();
@@ -23,6 +24,6 @@ describe('DB tests', function () {
 
             assert.equal(campaignId, adverts[0].campaignId);
         });
-
     });
+
 });
