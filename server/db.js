@@ -22,20 +22,28 @@ module.exports = {
         });
     },
 
-    createAdvert: function(){
+    createAdvert: function(params){
         advert.insert({
-            campaign        : '',
-            impressions     : 0,
-            clicks          : 0,
-            imageSizeWidth  : 0,
-            imageSizeHeight : 0,
-            image           : '',
-            text            : ''
+            campaignId      : params.campaignId || '',
+            impressions     : params.impressions || 0,
+            clicks          : params.clicks || 0,
+            imageSizeWidth  : params.imageSizeWidth || 0,
+            imageSizeHeight : params.imageSizeHeight || 0,
+            image           : params.image || '',
+            text            : params.text || ''
         });
     },
 
-    findCampaign: function(){
+    findAllCampaigns: function(){
         return campaign.find();
+    },
+
+    getAdverts: function(campaignId){
+        return advert.find({
+            campaignId: {
+                "$eeq": campaignId
+            }
+        });
     }
 
 };

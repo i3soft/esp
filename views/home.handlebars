@@ -1,0 +1,17 @@
+
+<g:each in="${adverts}" var="advert" status="i">
+  <div
+          onclick="EspWidget.clickAd('${advert._id}', {'incrementClick': 1})"
+          id="content-${i+1}"
+          style="
+            display:none; 
+            width: 100%; 
+            height: 80px; 
+            background: url('${espUrl}/post/file/${advert._id}/image?width=300'); 
+            background-repeat: no-repeat;
+            background-size: contain;">
+    <!--Sample text 1-->
+  </div>
+</g:each>
+
+

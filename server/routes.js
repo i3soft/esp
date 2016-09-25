@@ -13,5 +13,10 @@ module.exports = {
         app.get('/campaign/create', function (request, response) {
             ESPDB.createCampaign();
         });
+
+        app.get('/widget/renderHTML', function (request, response) {
+            var adverts = ESPDB.getAdverts(request.query.campaignId);
+            response.render('home', adverts);
+        });
     }
 };
